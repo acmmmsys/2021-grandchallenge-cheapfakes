@@ -1,5 +1,11 @@
 # 2021-grandchallenge-cheapfakes
 
+Challenge homepage: https://2021.acmmmsys.org/cheapfake_challenge.php
+
+## Retrieving the test dataset 
+
+Please request access to the test dataset by filling out the form [here](https://forms.gle/kTY4cZPfFKCG35YLA). 
+
 ## Building your Docker image
 To build your Docker image, you can run the following bash command:
 ```bash
