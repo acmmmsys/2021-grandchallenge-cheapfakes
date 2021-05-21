@@ -1,14 +1,15 @@
 # 2021-grandchallenge-cheapfakes
 
 Challenge homepage: https://2021.acmmmsys.org/cheapfake_challenge.php
+Paper Website: https://shivangi-aneja.github.io/projects/cosmos/
 
 ## Retrieving the test dataset 
 
 Please request access to the test dataset by filling out the form [here](https://forms.gle/kTY4cZPfFKCG35YLA). 
 
-## [Original Paper and Source Code](https://shivangi-aneja.github.io/projects/cosmos/)
+## Original Paper and Source Code
 
-We refer readers to the [paper](https://arxiv.org/abs/2101.06278) and [GitHub](https://github.com/shivangi-aneja/COSMOS) for more details
+We refer readers to the [paper](https://arxiv.org/abs/2101.06278) and [GitHub](https://github.com/shivangi-aneja/COSMOS) for more details.
 
 
 ## Building your Docker image
