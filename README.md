@@ -1,6 +1,6 @@
 # 2021-grandchallenge-cheapfakes
 
-Challenge homepage: https://2021.acmmmsys.org/cheapfake_challenge.php
+Challenge homepage: https://2021.acmmmsys.org/cheapfake_challenge.php  
 Paper Website: https://shivangi-aneja.github.io/projects/cosmos/
 
 ## Retrieving the test dataset 
