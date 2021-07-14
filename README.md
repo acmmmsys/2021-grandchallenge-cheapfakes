@@ -39,15 +39,13 @@ Go to https://docs.docker.com/get-docker/ and install the Docker application cor
 FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
 ```
 
-- **Add additional dependencies.** Examples:
+- **Install additional dependencies.** Examples:
 
 ```
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y <some package>
 RUN apt-get install <some package>
 RUN apt-get -y install <some package>
-RUN pip3 install -r /mmsys21cheapfakes/requirements.txt
 ```
-
 
 - **Copy necessary files.** Copy necessary files from local path to container path. For instance, for `/mmsys21cheapfakes` as the target directory in the container:
 
@@ -55,6 +53,11 @@ RUN pip3 install -r /mmsys21cheapfakes/requirements.txt
 COPY <local files> /mmsys21cheapfakes
 ```
 
+Further commands for installing dependencies, which refer to the container path, can be added after this operation:
+
+```
+RUN pip3 install -r /mmsys21cheapfakes/requirements.txt
+```
 
 - **Designate the code entrypoint.** For instance, if the file called `awesome-model.py` should be run using `python3`:  
 
@@ -95,7 +98,7 @@ docker run -v <submission folder>:/mmsys21cheapfakes [OPTIONS1] <container name>
 (See below for the exact command that will be run by the organization committee during evaluation.)
 
 
-### 5. Uploading your Docker Image
+### 5. Uploading your Docker image
 
 Please upload your Docker image to [DockerHub](https://hub.docker.com/) with the container name `mmsys21cheapfakes`. Use the tag `submission` for the version you would like to be evaluated. Example for a Dockerhub user called `<username>`:
 
