@@ -100,7 +100,11 @@ docker run -v <submission folder>:/mmsys21cheapfakes [OPTIONS1] <container name>
 
 ### 5. Uploading your Docker image
 
-Please upload your Docker image to [DockerHub](https://hub.docker.com/) with the container name `mmsys21cheapfakes`. Use the tag `submission` for the version you would like to be evaluated. Example for a Dockerhub user called `<username>`:
+Please use the container name `mmsys21cheapfakes` and the tag `submission` for the Docker image you would like to be evaluated. 
+
+- **Alternative A (preferred):** Upload your Docker image to [DockerHub](https://hub.docker.com/). 
+ 
+Example for a Dockerhub user called `<username>`:
 
 ```
 SOURCE=<container name>
@@ -119,6 +123,16 @@ docker login
 docker tag ${SOURCE} ${TARGET} && docker push ${TARGET}
 ```
 
+- **Alternative B:** Host your Docker image as a file in your software repository.
+
+Export your Docker image `mmsys21cheapfakes:submission` using the following command:
+
+```
+docker save mmsys21cheapfakes:submission > mmsys21cheapfakes.tar
+```
+
+This command will produce a tar file of your Docker image called `mmsysc21cheapfakes.tar` which you can then push to your software repository.
+
 
 ## Evaluation
 
@@ -126,5 +140,8 @@ Participant models will be run using the following command:
 
 ```
 docker pull <username>/mmsys21cheapfakes:submission
+OR
+docker load -i mmsys21cheapfakes.tar
+
 docker run -v <path to folder containing the hidden test split file test.json>:/mmsys21cheapfakes --gpus all mmsys21cheapfakes:submission > <output file>
 ```
