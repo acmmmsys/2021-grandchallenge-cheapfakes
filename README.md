@@ -59,7 +59,7 @@ COPY <local files> /mmsys21cheapfakes
 - **Designate the code entrypoint.** For instance, if the file called `awesome-model.py` should be run using `python3`:  
 
 ```
-CMD [ "python3", ".py" ]
+CMD [ "python3", "awesome-model.py" ]
 ```
 
 You can visit https://docs.docker.com/develop/develop-images/dockerfile_best-practices/ for more comprehensive documentation on creating a Dockerfile.
@@ -69,13 +69,13 @@ You can visit https://docs.docker.com/develop/develop-images/dockerfile_best-pra
 
 - Go to the folder where your Dockerfile resides.
 
-- To build an image named `container name`, run the following command: 
+- To build an image named `<container name>`, run the following command: 
 
 ```
 docker build -t <container name> .
 ```
 
-- To build an image named `container name` and tagged `container tag`, run the following command: 
+- To build an image named `<container name>` and tagged `<container tag>`, run the following command: 
 
 ```
 docker build -t <container name>:<container tag> .
@@ -86,7 +86,7 @@ You can visit https://docs.docker.com/engine/reference/commandline/build/ for mo
 
 ### 4. Testing your Docker image
 
-Assuming that the relevant test split file `test.json` resides in the local folder `submission folder`, you can run the following command to test your Docker image:
+Assuming that the relevant test split file `test.json` resides in the local folder `<submission folder>`, you can run the following command to test your Docker image:
 
 ```
 docker run -v <submission folder>:/mmsys21cheapfakes [OPTIONS1] <container name> [OPTIONS2]
@@ -97,7 +97,7 @@ docker run -v <submission folder>:/mmsys21cheapfakes [OPTIONS1] <container name>
 
 ### 5. Uploading your Docker Image
 
-Please upload your Docker image to [DockerHub](https://hub.docker.com/) with the container name `mmsys21cheapfakes`. Use the tag `submission` for the version you would like to be evaluated. Example for a Dockerhub user called `username`:
+Please upload your Docker image to [DockerHub](https://hub.docker.com/) with the container name `mmsys21cheapfakes`. Use the tag `submission` for the version you would like to be evaluated. Example for a Dockerhub user called `<username>`:
 
 ```
 SOURCE=<container name>
@@ -123,5 +123,5 @@ Participant models will be run using the following command:
 
 ```
 docker pull <username>/mmsys21cheapfakes:submission
-docker run -v <path to folder containing the hidden test split file test.json>:/mmsys21cheapfakes --gpus all <container name> > <output file>
+docker run -v <path to folder containing the hidden test split file test.json>:/mmsys21cheapfakes --gpus all mmsys21cheapfakes:submission > <output file>
 ```
