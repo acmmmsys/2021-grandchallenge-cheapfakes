@@ -123,6 +123,8 @@ docker login
 docker tag ${SOURCE} ${TARGET} && docker push ${TARGET}
 ```
 
+You can visit https://docs.docker.com/engine/reference/commandline/tag/ for more comprehensive documentation on tagging a Docker image.
+
 - **Alternative B:** Host your Docker image as a file in your software repository.
 
 Export your Docker image `mmsys21cheapfakes:submission` using the following command:
